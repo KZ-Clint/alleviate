@@ -151,20 +151,20 @@ const followCause = async () => {
                   <div className={styles.idbox2} >
                       <h2 className={styles.idbox2h2} > { cause.cause_title } </h2>
                       <div className={styles.sliderbox} >
-                        <Slider className={styles.muislider1}  
+                        <Slider 
                                 size="medium"                      
                                 aria-label="Medium"
                                 defaultValue={cause.amount_received}
                                 min={0}
                                 max={cause.target_amount}                        
                             />
-                             <Slider className={styles.muislider2}  
+                             {/* <Slider className={styles.muislider2}  
                                 size="small"                      
                                 aria-label="Small"
                                 defaultValue={cause.amount_received}
                                 min={0}
                                 max={cause.target_amount}                        
-                            />
+                            /> */}
                         </div> 
                         <div className={styles.idbox3} >
                             <div className={styles.idbox4} >
