@@ -1,3 +1,4 @@
+import axios from 'axios'
 
 export const ImageUpload = async ( images, CUP, CN, CA) => {
     let imgArr = []
@@ -8,11 +9,8 @@ export const ImageUpload = async ( images, CUP, CN, CA) => {
       formData.append( "upload_preset",  CUP)
       formData.append( "cloud_name", CN )
  
-      const res = await fetch( CA , {
-         method: "POST",
-         body: formData
-      }  )
-      const data = await res.json()
+      const res = await axios.post( CA , formData  )
+      const data = await res.data
       imgArr.push({ public_id: data.public_id, url: data.secure_url })
        
     }
