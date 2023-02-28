@@ -1,0 +1,166 @@
+.loaderbox{
+    width: 100vw;
+    height: 100vh;
+    background:rgba(1,1,1,0.5);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.genbox{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    width: 45vw;
+    gap: 15px;
+    background-color: #FFFFFF;
+    height: 100vh;
+    animation-name: example;
+    animation-duration: 0.5s;
+    z-index: 3;
+
+}
+@keyframes example {
+    0%   { right: -1000px;}
+    100% { right: 0; }
+}
+.genbox2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.icon{
+    cursor: pointer;
+    font-size: 23px;
+}
+.genbox2h{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+}
+.formbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 30px;
+    width: 100%;
+}
+.imglabel{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.imgpics{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   object-fit: cover;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+.formtextarea{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 15px;
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 15px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.formtextarea:focus{
+    outline: none;
+}
+.formtextarea2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 15px;
+    width: 100%;
+    height: 150px;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 15px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.formtextarea2:focus{
+    outline: none;
+}
+.buttonbox{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+.butt{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 30px;
+    width: 70%;
+    background: #0066FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+
+  @media screen and (max-width:1000px) { 
+
+    .genbox{
+        width: 60vw;   
+    }
+
+  }
+
+  @media screen and (max-width:700px) { 
+ 
+    .loaderbox{
+       display: none;
+    }
+    .genbox{
+        width: 100%;    
+    }
+    .genbox{
+        overflow-y: scroll;
+    }
+
+  }

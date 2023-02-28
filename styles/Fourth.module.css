@@ -1,0 +1,98 @@
+  .fourthmainhead{
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 42px;
+    text-align: center;
+    color: #595858;
+  }
+  .fourthmainb2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+    width: 100%;
+  }
+  .iconwrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    width: 300px;
+  }
+  .imgicon2{
+    width: 120px;
+    height: 110px;
+    border-radius: 50%;
+  }
+  .imgicontext2{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #595858;
+  }
+  .imgicontext2i{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #595858;
+  }
+  .fourthmainb{
+    background-image: url('/assets/ashwhitebackground.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px 80px;
+    gap: 100px;
+  }
+ 
+  
+  @media screen and (max-width:900px) { 
+
+  .fourthmainb{
+    background-image: url('/assets/ashwhitebackground.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px 80px;
+    gap: 100px;
+  }
+  .fourthmainhead{
+    width: 100%;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .fourthmainb2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 100px;
+    width: 100%;
+  }
+  .iconwrapper{
+    width: 100%;
+  }
+  .imgicontext2i{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #595858;
+  }
+  }

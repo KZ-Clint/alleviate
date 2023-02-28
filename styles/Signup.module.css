@@ -1,0 +1,374 @@
+.ldx{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.box1{
+    background-image: url('/assets/ashwhitebackground.jpg');
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+.box1div1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.box1div1img{
+    width: 200px;
+    height: 100px;
+}
+.box1div1img2{
+    width: 200px;
+    height: 60px;
+}
+.box2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px 50px;
+    gap: 30px;
+    width: 550px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+.box2div1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    width: 70%;
+    border-radius: 30px;
+}
+.boxabled{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0px;
+    width: 50%;
+    background: #0066FF;
+    border-radius: 30px 0px 0px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.boxabled2{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0px;
+    width: 50%;
+    background: #0066FF;
+    border-radius: 0px 30px 30px 0px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.boxdisabled{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0px;
+    width: 50%;
+    background: white;
+    border-radius: 0px 30px 30px 0px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+.formbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 30px;
+    width: 100%;
+}
+.forminput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    width: 100%;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 15px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.forminput:focus{
+    outline: none;
+}
+.formdiv1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+}
+.formdiv1div1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    width: 20%;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 15px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    cursor: pointer;
+}
+.formdiv1div2{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   justify-content: flex-start;
+   position: absolute;
+   width: 240px;
+   background: white;
+   padding: 20px;
+   top: 60px;
+   border: 1px solid rgb(196, 196, 196);
+   border-radius: 4px;
+   box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+   height: 250px;
+   overflow-y: scroll;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.formdiv1div2div1{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    width: 30%;
+}
+.formccspan{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: #595858;
+    width: 70%;
+
+}
+.formtextarea{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 15px;
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 15px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.formtextarea:focus{
+    outline: none;
+}
+.formtextarea2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 15px;
+    width: 100%;
+    height: 150px;
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px 0px 15px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+}
+.formtextarea2:focus{
+    outline: none;
+}
+.formdiv2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+}
+.formdiv2check{
+    width: 16px;
+    height: 16px;
+}
+.formdiv2checkdiv{
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #595858;
+}
+.box2div1login{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+}
+.checkboxp{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #595858;
+}
+.checkboxtp{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: #4583DF;
+}
+.buttonbox{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+.butt{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 30px;
+    width: 70%;
+    background: #0066FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.captionp{
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #595858;
+
+}
+.captionpblue{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #0066FF;
+}
+.imglabel{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.imgpics{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   object-fit: cover;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+  @media screen and (max-width:800px) { 
+
+    .box1{
+        padding: 50px 0px 0px;
+    }
+    .box1{
+        flex-direction: column;
+      
+    }
+    .box2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px 50px;
+        gap: 30px;
+        width: 100%;
+        background: #FFFFFF;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px rgb(255, 255, 255);
+    }
+    .box2div1{     
+        width: 90%;   
+    }
+
+  }
