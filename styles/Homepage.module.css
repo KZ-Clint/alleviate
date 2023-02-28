@@ -346,6 +346,15 @@
         justify-content: stretch;
         position: relative;
       }
+      .columndivalt{
+        display: grid;
+        grid-template-columns: auto auto ;
+        column-gap: 10px;
+        row-gap: 10px;
+        width: 100%;
+        justify-content: center;
+       
+      }
       .fifthmainb3cs{   
         width: 100%;
        }
@@ -431,6 +440,14 @@
     width: 100%;
     justify-content: center;
     
+  }
+  .columndivalt{
+    display: grid;
+    grid-template-columns: auto ;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: 100%;
+    justify-content: stretch;
   }
 
 }
