@@ -8,9 +8,10 @@ import PaypalBtn from '../Paypalbtn';
 
 
 export default function Donate ({ donateclick, setDonateClick, donateselect, setDonateSelect, donatedata, handleChangeInput, iscryptoselect, setIsCryptoSelect, cryptoindex,setCryptoIndex, Coins, successMsg, setSuccessMsg,
-     cause, user, token, ispaypal, setIsPaypal, setCause }) {
+     cause, user, token, ispaypal, setIsPaypal, setCause, price, cryptoDonate }) {
 
    const { amount, address } = donatedata
+
 
   return (
     <>
@@ -43,8 +44,8 @@ export default function Donate ({ donateclick, setDonateClick, donateselect, set
             <div className={styles.cdiv1} >
                 <div className={styles.rowswap} >
                     <div className={styles.rowswap1} onClick={ () => { setIsCryptoSelect(!iscryptoselect) } } > 
-                        <img className={styles.rowswapimg} src={ !cryptoindex ? Coins[0].cover_picture : Coins[cryptoindex].cover_picture } alt="" />
-                        <p className={styles.rowswapcur} > { !cryptoindex ? Coins[0].coin : Coins[cryptoindex].coin } </p>
+                        <img className={styles.rowswapimg} src={  Coins[cryptoindex].cover_picture } alt="" />
+                        <p className={styles.rowswapcur} > {  Coins[cryptoindex].coin } </p>
                         { iscryptoselect &&
                             <div className={styles.selectdiv2} >
                             {  Coins.map(  (c, index) => (
@@ -62,12 +63,13 @@ export default function Donate ({ donateclick, setDonateClick, donateselect, set
                     
                 </div>
 
-                <div className={styles.rowswap2} >            
-                        <input className={styles.inputboxcrypt} type="number" id="amount" name="amount" placeholder="Amount..." value={amount} onChange={handleChangeInput}   />
-                        <div className={styles.rowswapresult} >  $5000.00 </div>       
+                <div className={styles.rowswap2} >  
+                    <div className={styles.rowswapresult} >  {amount/price } </div>             
+                    <input className={styles.inputboxcrypt} type="number" id="amount" name="amount" placeholder="Amount..." value={amount} onChange={handleChangeInput}   />
+                           
                 </div>
                 
-                <div className={styles.selectdiv} >
+                <div className={styles.selectdiv} onClick={cryptoDonate} >
                     <p className={styles.coinbtext} > Pay with </p>
                     <img className={styles.coinblogo} src="/assets/coinbaselogo.svg" alt="" />
                 </div>

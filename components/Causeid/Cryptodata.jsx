@@ -4,7 +4,7 @@ export const Coins = [
         cover_picture: "/assets/bitcoinlogo.svg"
     },
     {  
-        coin: "SHIB",
+        coin: "ETH",
         cover_picture: "/assets/shibalogo.svg"
     }
 ]

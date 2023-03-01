@@ -27,16 +27,18 @@ export default function Causeid ({ user, token }) {
   const [ rateClick, setRateClick ] = useState(false)
   const [ successMsg, setSuccessMsg ] = useState(false)
   const [ isdonors, setIsDonors ] = useState(false)
-  const [ cryptoindex, setCryptoIndex ] = useState(null)
+  const [ cryptoindex, setCryptoIndex ] = useState(0)
   const [ donateselect, setDonateSelect ] = useState("paywithpaypal")
   const initialState = {  amount: '', address: '' }
   const [ donatedata, setDonateData ] = useState(initialState)
+  const { amount, address } = donatedata
   const [ value, setValue ] = useState(2)
   const router = useRouter()
   const labels = { 0.5: 'Useless', 1: 'Useless+', 1.5: 'Poor', 2: 'Poor+', 2.5: 'Ok', 3: 'Ok+', 3.5: 'Good',4: 'Good+', 4.5: 'Excellent', 5: 'Excellent+'};
   const [ cause, setCause ] = useState({})
   const [ isfollowing, setIsFollowing ] = useState(false)
   const [ ispaypal, setIsPaypal ] = useState(false)
+  const [ price, setPrice ] = useState(0)
   
 
   const handleChangeInput = (e) => {
@@ -119,6 +121,27 @@ const followCause = async () => {
    }
   }
 
+  const cryptoDonate = async () => {
+    try { 
+   const res = await axios.post(`${baseUrl}/api/coinbase/pay`, { firstName:user.user.firstName, lastName: user.user.lastName, amount:amount } )
+   console.log(res.data)
+  } catch (error) {
+   console.log(error)
+  }
+ }
+
+  useEffect( () => {
+   const getPrice = async() => {
+    try {
+        const res = await axios.get(`${baseUrl}/api/coin/${Coins[cryptoindex].coin}`)
+       
+        setPrice(res.data.rates[Coins[cryptoindex].coin])
+    } catch (error) {
+        console.log({error})
+    } }  
+   getPrice() 
+ },[amount, cryptoindex] )
+  
 
   return (
     <>
@@ -129,7 +152,7 @@ const followCause = async () => {
     
      { donateclick && <Donate donateclick={donateclick} setDonateClick={setDonateClick} donateselect={donateselect} setDonateSelect={setDonateSelect} donatedata={donatedata} handleChangeInput={handleChangeInput}
      iscryptoselect={iscryptoselect} setIsCryptoSelect={setIsCryptoSelect} cryptoindex={cryptoindex} setCryptoIndex={setCryptoIndex} Coins={Coins} successMsg={successMsg} setSuccessMsg={setSuccessMsg} cause={cause}
-     user={user} token={token} ispaypal={ispaypal} setIsPaypal={setIsPaypal} setCause={setCause} /> }
+     user={user} token={token} ispaypal={ispaypal} setIsPaypal={setIsPaypal} setCause={setCause} price={price} cryptoDonate={cryptoDonate} /> }
      
        { Object.keys(cause).length > 0 &&
        <div className={styles.iov} > 
