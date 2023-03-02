@@ -122,9 +122,11 @@ const followCause = async () => {
   }
 
   const cryptoDonate = async () => {
+    const data = { firstName:user.user.firstName, lastName: user.user.lastName, user_id:user.user._id, amount:amount, cause_title:cause.cause_title, cause_id:cause._id }
     try { 
-   const res = await axios.post(`${baseUrl}/api/coinbase/pay`, { firstName:user.user.firstName, lastName: user.user.lastName, amount:amount } )
+   const res = await axios.post(`${baseUrl}/api/coinbase/pay`, data )
    console.log(res.data)
+   router.push(res.data.data.hosted_url)
   } catch (error) {
    console.log(error)
   }
