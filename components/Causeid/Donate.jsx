@@ -8,7 +8,7 @@ import PaypalBtn from '../Paypalbtn';
 
 
 export default function Donate ({ donateclick, setDonateClick, donateselect, setDonateSelect, donatedata, handleChangeInput, iscryptoselect, setIsCryptoSelect, cryptoindex,setCryptoIndex, Coins, successMsg, setSuccessMsg,
-     cause, user, token, ispaypal, setIsPaypal, setCause, price, cryptoDonate }) {
+     cause, user, token, ispaypal, setIsPaypal, setCause, price, cryptoDonate, stripePay }) {
 
    const { amount, address } = donatedata
 
@@ -30,14 +30,15 @@ export default function Donate ({ donateclick, setDonateClick, donateselect, set
                 <div className={styles.formbox} >
                     <input className={styles.inputbox} type="text" id="address" name="address" placeholder="Address..." value={address} onChange={handleChangeInput}  />
                     <input className={styles.inputbox} type="number" id="amount" name="amount" placeholder="Amount..." value={amount} onChange={handleChangeInput}   />
-                   { !ispaypal && <button className={styles.butt} disabled={!amount || !address ? true : false } onClick={ () => {  setIsPaypal(!ispaypal);  } } > Donate </button> }
+                   {/* { !ispaypal && <button className={styles.butt} disabled={!amount || !address ? true : false } onClick={ () => {  setIsPaypal(!ispaypal);  } } > Donate </button> } */}
+                   <button className={styles.butt} disabled={!amount || !address ? true : false } onClick={stripePay} > Stripe </button> 
                 </div>
-                { ispaypal && <PaypalBtn amount={amount} cause={cause} user={user} token={token} setSuccessMsg={setSuccessMsg} successMsg={successMsg} ispaypal={ispaypal} setIsPaypal={setIsPaypal} setCause={setCause} />  }
+                {/* { ispaypal && <PaypalBtn amount={amount} cause={cause} user={user} token={token} setSuccessMsg={setSuccessMsg} successMsg={successMsg} ispaypal={ispaypal} setIsPaypal={setIsPaypal} setCause={setCause} />  } */}
     
-               {  !ispaypal &&  <div className={styles.footer} >
+                <div className={styles.footer} >
                     <p className={styles.footerp} > Powered By </p>
                     <img className={styles.footerimg} src="/assets/paypallogo.png" alt="" />
-                </div> }
+                </div> 
 
             </div>  }
       { donateselect === "paywithcrypto" && 

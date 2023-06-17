@@ -1,0 +1,36 @@
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+  
+.figure {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+  
+.img {
+    flex-shrink: 0;
+    width: 33.33%;
+    height: 300px;
+   border: 3px solid red;
+}
+.butt{
+    position: absolute;
+    left: 20px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+}
+.butt2{
+    position: absolute;
+    right: 20px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+}

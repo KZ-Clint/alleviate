@@ -132,6 +132,17 @@ const followCause = async () => {
   }
  }
 
+ const stripePay = async () => {
+  const data = { firstName:user.user.firstName, lastName: user.user.lastName, email:user.user.email, user_id:user.user._id, amount:amount, cause_title:cause.cause_title, cause_id:cause._id }
+  try { 
+ const res = await axios.post(`${baseUrl}/create-checkout-session`, data )
+ console.log(res.data)
+ router.push(res.data.url)
+ } catch (error) {
+ console.log(error)
+ }
+}
+
   useEffect( () => {
    const getPrice = async() => {
     try {
@@ -154,7 +165,7 @@ const followCause = async () => {
     
      { donateclick && <Donate donateclick={donateclick} setDonateClick={setDonateClick} donateselect={donateselect} setDonateSelect={setDonateSelect} donatedata={donatedata} handleChangeInput={handleChangeInput}
      iscryptoselect={iscryptoselect} setIsCryptoSelect={setIsCryptoSelect} cryptoindex={cryptoindex} setCryptoIndex={setCryptoIndex} Coins={Coins} successMsg={successMsg} setSuccessMsg={setSuccessMsg} cause={cause}
-     user={user} token={token} ispaypal={ispaypal} setIsPaypal={setIsPaypal} setCause={setCause} price={price} cryptoDonate={cryptoDonate} /> }
+     user={user} token={token} ispaypal={ispaypal} setIsPaypal={setIsPaypal} setCause={setCause} price={price} cryptoDonate={cryptoDonate} stripePay={stripePay} /> }
      
        { Object.keys(cause).length > 0 &&
        <div className={styles.iov} > 

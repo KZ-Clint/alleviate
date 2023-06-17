@@ -22,6 +22,7 @@ export default function Home() {
   useEffect( () => {    
     const getTopProjects = async () => { 
       setSkeleton1(true)
+      setGenLoading(false)
        try {
           const res = await axios.get( `${baseUrl}/causes/special` )
           setTopProjects(res.data.cause)      
@@ -77,5 +78,4 @@ export function getServerSideProps ({req,res}) {
   return {
       props: { token: tokenReq }
   }
-
 }

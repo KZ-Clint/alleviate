@@ -18,8 +18,7 @@ export default function Login () {
 
     const handleChangeInput = (e) => {
       const {name, value} = e.target
-      setUserData({...userdata, [name] : value })
-     
+      setUserData({...userdata, [name] : value })  
     }
 
     useEffect( () => {    

@@ -153,7 +153,6 @@ export async function getServerSideProps ({req,res}) {
   let CLOUD_NAME  = process.env.CLOUD_NAME
   let CLOUD_API = process.env.CLOUD_API
 
-
    let tokenReq= {}
    let userData ={}
    if(req.cookies.token){
