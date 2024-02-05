@@ -34,8 +34,9 @@ export default function Success () {
     <>
        <div className={styles.success_box} >
             <div className={styles.genbox} >
-               <FavoriteIcon className={styles.favricon} />
+               <FavoriteIcon className={styles.favricon} style={{ width:'170px', height:'170px' }}  />
                <p className={styles.posttext} > Thank you, you just made the world to a million lives  </p>
+               <button className={styles.butt} onClick={ () => {  router.push('/home') } } > Home </button> 
             </div>
        </div>
     </>
