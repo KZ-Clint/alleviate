@@ -16,6 +16,7 @@ import axios from 'axios'
 import { Context } from '@/components/Context'
 import baseUrl from '@/components/Baseurl/baseUrl';
 import { useRouter } from 'next/router';
+import "react-quill/dist/quill.snow.css"
 
 export default function Causeid ({ user, token }) {
   
