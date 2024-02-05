@@ -6,7 +6,7 @@ import { useState, useEffect, useContext } from 'react'
 export default function Fourth () {
   return (
     <>
-      <div className={styles.fourthmainb}  >
+      <div className={styles.fourthmainb} >
          <h2 className={styles.fourthmainhead} > How does it do that? </h2>
          <div className={styles.fourthmainb2} >
              <div className={styles.iconwrapper} >

@@ -59,7 +59,7 @@ export default function Causeid ({ user, token }) {
            setIsFollowing(true)
        }
         setGenLoading(false)
-        document.title =  `Cause/${res.data.cause.cause_title}`;
+        document.title =  `${res.data.cause.cause_title}`;
     } catch (error) {
         console.log({error})
         setGenLoading(false)
@@ -233,8 +233,9 @@ const followCause = async () => {
                         </div>
 
                         <div className={styles.idbox6} >
-                            <p className={styles.idbox6p} > {cause.story} </p>
-                            <div className={styles.idboxdiv1} >
+                            {/* <p className={styles.idbox6p} > {cause.story} </p> */}
+                            <div dangerouslySetInnerHTML={{ __html: cause.story }} className="ql-editor" />
+                            {/* <div className={styles.idboxdiv1} >
                                 <h2 className={styles.idbox6div1h2} > Solution </h2>
                                 <p className={styles.idbox6p}> {cause.solution} </p>
                             </div>
@@ -245,7 +246,7 @@ const followCause = async () => {
                                       { index === 0 ? "Link to website" : "Link to socials " }
                                     </Link>
                                   ) ) }
-                            </div>
+                            </div> */}
                         </div>
                         <div className={styles.idbox7} >
                             <button className={  user.user.role === "advocate" ? styles.idbox7buttdisabled :  styles.idbox7butt} onClick={ () => { setDonateClick(!donateclick) } } disabled={ user.user.role === "advocate" ? true : false } > Donate </button>

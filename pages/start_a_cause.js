@@ -7,12 +7,14 @@ import axios from 'axios'
 import baseUrl from '@/components/Baseurl/baseUrl';
 import Causesstarted2 from '@/components/Startacause/Causesstarted'
 import { Context } from '@/components/Context'
-import Startacause2 from '@/components/Startacause/Startacause2'
 import { Category } from '@/components/Home/Categorydata'
 import { ImageUpload } from '@/components/Imageupload/imageUpload'
+import dynamic from 'next/dynamic';
 
+const Startacause2 = dynamic(() => import('@/components/Startacause/Startacause2'), { ssr: false });
 
 export default function Startacause ({user, token, CUP, CN, CA }) {
+
 
    const { error1, setError1, setGenLoading } = useContext(Context)
 
@@ -20,9 +22,10 @@ export default function Startacause ({user, token, CUP, CN, CA }) {
    const [ catindex, setCatIndex ] = useState(null)
    const [ isSelect, setIsSelect ] = useState("startacause")
    const [ file, setFile ] = useState([])
-   const initialState = { cause_title: '', target_amount: '', story: '', solution: '', acc_number: '', bank: '', social_link:'', web_link:'' }
+   const [ story, setStory ] = useState('')
+   const initialState = { cause_title: '', target_amount: '', acc_number: '', bank: '' }
    const [ causedata, setCauseData ] = useState(initialState)
-   const { cause_title, target_amount, story, solution, acc_number, bank, social_link, web_link } = causedata
+   const { cause_title, target_amount, acc_number, bank } = causedata
    const [ deadline, setDeadline ] = useState("")
    const [ advcauses, setAdvCauses ] = useState([])
 
@@ -85,11 +88,12 @@ useEffect( () => {
 
  const handleCreateCause = async (e) => {
    e.preventDefault()
-     if( !cause_title || !target_amount ||!story || !solution || !acc_number || !bank || !social_link || !web_link || !catindex || file.length <1 || !deadline ){
+
+     if( !cause_title || !target_amount ||!story || !acc_number || !bank || !catindex || file.length <1 || !deadline ){
         setError1("No field must be left empty!!")
         return
      } 
-     if( story.length < 300 || solution.length < 300 ) {
+     if( story.length < 300 ) {
         setError1("Your approach must be detailed!!")
         return
      }
@@ -105,7 +109,7 @@ useEffect( () => {
       }
      setGenLoading(true)
       try {
-         const res = await axios.post( `${baseUrl}/causes/create`, { ...causedata, deadline, cover_photo: media ? media : "", category:Category[catindex].category }, {  headers: {
+         const res = await axios.post( `${baseUrl}/causes/create`, { ...causedata, story, deadline, cover_photo: media ? media : "", category:Category[catindex].category }, {  headers: {
            'Authorization': `Bearer ${token} `
          }}  )
          setAdvCauses([...advcauses, res.data.cause])
@@ -141,7 +145,7 @@ useEffect( () => {
 
              { isSelect === "causesstarted" && <Causesstarted2 advcauses={advcauses} /> }
              { isSelect === "startacause" &&  <Startacause2 handleUploadInput={handleUploadInput} file={file} deleteImage={deleteImage} Category={Category} iscategory={iscategory} setIsCategory={setIsCategory} catindex={catindex} setCatIndex={setCatIndex}
-              deadline={deadline} setDeadline={setDeadline} causedata={causedata} handleChangeInput={handleChangeInput} handleCreateCause={handleCreateCause} /> }
+              deadline={deadline} setDeadline={setDeadline} causedata={causedata} handleChangeInput={handleChangeInput} handleCreateCause={handleCreateCause} story={story} setStory={setStory} /> }
           </div>
        </div>
     </>

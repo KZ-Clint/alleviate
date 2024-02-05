@@ -22,7 +22,7 @@ export default function Donate ({ donateclick, setDonateClick, donateselect, set
       <div className={styles.genbox} >
             <p className={styles.targetamount} > Target Amount: ${cause.target_amount.toLocaleString()} </p> 
             <div className={styles.nav} >
-                <p className={ donateselect === "paywithpaypal" ? styles.navabled : styles.navdisabled } onClick={ () => { setDonateSelect("paywithpaypal") } } > Pay with PayPal </p>
+                <p className={ donateselect === "paywithpaypal" ? styles.navabled : styles.navdisabled } onClick={ () => { setDonateSelect("paywithpaypal") } } > Pay with Stripe </p>
                 <p className={ donateselect === "paywithcrypto" ? styles.navabled2: styles.navdisabled} onClick={ () => { setDonateSelect("paywithcrypto") } } > Pay with Crypto </p>
             </div>
     {  donateselect === "paywithpaypal"  && 
@@ -37,7 +37,7 @@ export default function Donate ({ donateclick, setDonateClick, donateselect, set
     
                 <div className={styles.footer} >
                     <p className={styles.footerp} > Powered By </p>
-                    <img className={styles.footerimg} src="/assets/paypallogo.png" alt="" />
+                    <img className={styles.footerimg} src="/assets/stripelogo.png" alt="" />
                 </div> 
 
             </div>  }
